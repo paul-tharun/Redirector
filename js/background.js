@@ -54,11 +54,6 @@ function setIcon(image) {
 //decide whether or not we want to redirect.
 function checkRedirects(details) {
 
-	//We only allow GET request to be redirected, don't want to accidentally redirect
-	//sensitive POST parameters
-	if (details.method != 'GET') {
-		return {};
-	}
 	log('Checking: ' + details.type + ': ' + details.url);
 
 	var list = partitionedRedirects[details.type];
